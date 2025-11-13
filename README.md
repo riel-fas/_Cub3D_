@@ -526,36 +526,36 @@ typedef struct s_ray
 └────────────────────┬────────────────────────────────┘
                      │
           ┌──────────▼──────────┐
-          │  1. PARSE .CUB FILE  │
-          │  - Validate format   │
-          │  - Extract textures  │
-          │  - Parse colors      │
-          │  - Load map          │
-          │  - Validate map      │
+          │  1.PARSE .CUB FILE  │
+          │  - Validate format  │
+          │  - Extract textures │
+          │  - Parse colors     │
+          │  - Load map         │
+          │  - Validate map     │
           └──────────┬──────────┘
                      │
           ┌──────────▼──────────┐
-          │  2. INITIALIZE MLX42 │
-          │  - Create window     │
-          │  - Create image      │
-          │  - Load textures     │
+          │  2.INITIALIZE MLX42 │
+          │  - Create window    │
+          │  - Create image     │
+          │  - Load textures    │
           └──────────┬──────────┘
                      │
           ┌──────────▼──────────┐
-          │  3. SETUP PLAYER     │
-          │  - Position vectors  │
-          │  - Direction vectors │
-          │  - Camera plane      │
+          │  3.SETUP PLAYER     │
+          │  - Position vectors │
+          │  - Direction vectors│
+          │  - Camera plane     │
           └──────────┬──────────┘
                      │
           ┌──────────▼──────────┐
-          │  4. REGISTER HOOKS   │
-          │  - Keyboard callback │
-          │  - Game loop hook    │
+          │  4.REGISTER HOOKS   │
+          │  - Keyboard callback│
+          │  - Game loop hook   │
           └──────────┬──────────┘
                      │
           ┌──────────▼──────────────┐
-          │    5. GAME LOOP (60 FPS) │
+          │    5. GAME LOOP(60 FPS) │
           │  ┌────────────────────┐ │
           │  │  Process Input     │←┤
           │  │        ↓           │ │
@@ -572,7 +572,7 @@ typedef struct s_ray
                    [ESC pressed]
                         │
           ┌─────────────▼───────────┐
-          │    6. CLEANUP & EXIT     │
+          │    6. CLEANUP & EXIT    │
           │  - Free textures        │
           │  - Free map             │
           │  - Terminate MLX        │
