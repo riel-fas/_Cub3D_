@@ -15,21 +15,6 @@
 
 ---
 
-## 📖 Table of Contents
-
-- [Overview](#overview)
-- [Features](#features)
-- [Technology Stack](#technology-stack)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Map File Format](#map-file-format)
-- [Controls](#controls)
-- [Architecture](#architecture)
-- [Documentation](#documentation)
-- [License](#license)
-
----
-
 ## 🎯 Overview
 
 Cub3D is a **3D game engine** that renders a first-person perspective view from a 2D map using the **raycasting** technique made famous by id Software's Wolfenstein 3D (1992). This project demonstrates advanced graphics programming concepts including:
@@ -579,28 +564,6 @@ typedef struct s_ray
 ```
 
 ---
-
-## 📚 Documentation
-
-### Complete Tutorial Series
-
-This project includes comprehensive documentation:
-
-| Tutorial | Topic | Description |
-|----------|-------|-------------|
-| [00 - Master Index](TUTORIALS/00_MASTER_INDEX.md) | Overview | Complete guide navigation |
-| [01 - Project Overview](TUTORIALS/01_PROJECT_OVERVIEW.md) | Architecture | System design and data structures |
-| [02 - File Parsing](TUTORIALS/02_FILE_PARSING.md) | Parsing | Reading and validating `.cub` files |
-| [03 - Map Parsing](TUTORIALS/03_MAP_PARSING.md) | Validation | Map extraction and flood-fill |
-| [04 - Player Setup](TUTORIALS/04_PLAYER_SETUP.md) | Initialization | Direction vectors and FOV |
-| [05 - Raycasting](TUTORIALS/05_RAYCASTING.md) | Engine | DDA algorithm and 3D projection |
-| [06 - Textures](TUTORIALS/06_TEXTURES.md) | Graphics | PNG loading and pixel management |
-| [07 - Rendering](TUTORIALS/07_RENDERING.md) | Display | Drawing walls, floor, and ceiling |
-| [08 - Input & Movement](TUTORIALS/08_INPUT_MOVEMENT.md) | Controls | Keyboard handling and collision |
-| [09 - Game Loop](TUTORIALS/09_GAME_LOOP.md) | Integration | MLX42 and main loop |
-| [10 - Memory & Errors](TUTORIALS/10_MEMORY_ERRORS.md) | Quality | Leak prevention and debugging |
-
-**Total Documentation:** 500+ pages covering every aspect
 
 ### Key Algorithms
 
