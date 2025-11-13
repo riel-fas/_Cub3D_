@@ -1,0 +1,115 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parse_map_3_bonus.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: riel-fas <riel-fas@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/09/13 20:48:21 by riel-fas          #+#    #+#             */
+/*   Updated: 2025/10/28 16:30:59 by riel-fas         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "../../inc/cub3d_bonus.h"
+
+char	*pad_map_line(char *line, int target_width)
+{
+	char	*padded_line;
+	int		original_len;
+	int		x;
+
+	original_len = ft_strlen(line);
+	padded_line = malloc(target_width + 1);
+	if (!padded_line)
+		return (NULL);
+	x = 0;
+	while (x < original_len)
+	{
+		padded_line[x] = line[x];
+		x++;
+	}
+	while (x < target_width)
+	{
+		padded_line[x] = ' ';
+		x++;
+	}
+	padded_line[target_width] = '\0';
+	return (padded_line);
+}
+
+int	initialize_map_data(t_data *data, int *map_start)
+{
+	int	map_line_count;
+
+	*map_start = find_map_start(data);
+	if (*map_start == -1)
+	{
+		printf("❌ No map found in file\n");
+		return (FALSE);
+	}
+	printf("🗺️  Map starts at line %d\n", *map_start + 1);
+	map_line_count = count_map_lines(data, *map_start);
+	if (map_line_count <= 0)
+	{
+		printf("❌ Invalid map\n");
+		return (FALSE);
+	}
+	data->map_width = get_map_width(data, *map_start);
+	if (data->map_width <= 0)
+	{
+		printf("❌ Invalid map width\n");
+		return (FALSE);
+	}
+	data->map_height = map_line_count;
+	printf("📏 Map dimensions: %d x %d\n", data->map_width, data->map_height);
+	return (TRUE);
+}
+
+int	allocate_map_memory(t_data *data)
+{
+	data->map = malloc(sizeof(char *) * (data->map_height + 1));
+	if (!data->map)
+	{
+		printf("❌ Memory allocation error for map\n");
+		return (FALSE);
+	}
+	return (TRUE);
+}
+
+char	*process_map_line(char *file_line)
+{
+	char	*line_copy;
+	int		len;
+	int		x;
+
+	x = 0;
+	if (!file_line)
+		return (NULL);
+	len = ft_strlen(file_line);
+	if (len > 0 && file_line[len - 1] == '\n')
+		len--;
+	if (len == 0)
+		return (NULL);
+	line_copy = malloc(len + 1);
+	if (!line_copy)
+		return ((char *)-1);
+	ft_strncpy(line_copy, file_line, len);
+	line_copy[len] = '\0';
+	while (x < len)
+	{
+		if (file_line[x] != ' ' && file_line[x] != '\t')
+			return (line_copy);
+		x++;
+	}
+	free(line_copy);
+	return (NULL);
+}
+
+int	add_line_to_map(t_data *data, char *trimmed_line, int map_index)
+{
+	data->map[map_index] = ft_strdup(trimmed_line);
+	if (!data->map[map_index])
+		return (FALSE);
+	printf("🗺️  Line %d: %s\n", map_index, data->map[map_index]);
+	return (TRUE);
+}
