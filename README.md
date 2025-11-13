@@ -34,15 +34,6 @@ Raycasting is a rendering technique that creates a 3D perspective in a 2D world 
 - ✅ Enables fast rendering by casting one ray per screen column
 - ✅ Was revolutionary in early 1990s game development
 
-```
-Top-down 2D map view:          First-person 3D view:
-┌─────────┐                    ┌─────────────────────┐
-│ ■   ●  │  ● = Player         │ ███╗   ███║    ███║ │
-│ ■■■    │  ■ = Walls          │ ████╗ ████║   ████║ │
-│    ■   │                     │ ██╔████╔██║  ██╔══╝ │
-└─────────┘                    └─────────────────────┘
-```
-
 ---
 
 ## ✨ Features
