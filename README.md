@@ -1,5 +1,6 @@
 <div align="center">
 Cub3D - A Raycasting Game Engine
+</div>
 
 <div align="center">
 
