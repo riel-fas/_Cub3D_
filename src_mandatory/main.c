@@ -81,11 +81,11 @@ static int	parse_and_validate(t_data *data, int argc, char **argv)
 	return (TRUE);
 }
 
-int	main(int argc, char **argv)
+int	main(int ac, char **av)
 {
 	t_data	data;
 
-	parse_and_validate(&data, argc, argv);
+	parse_and_validate(&data, ac, av);
 	if (WINDOW_WIDTH > 1500 || WINDOW_HEIGHT > 1000)
 	{
 		printf("❌ Error: Window dimensions exceed limits!\n");

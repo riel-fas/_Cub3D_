@@ -24,7 +24,7 @@ Cub3D is a **3D game engine** that renders a first-person perspective view from 
 - Texture mapping and pixel manipulation
 - Efficient collision detection
 - Frame-based game loop architecture
-
+- ok 
 ### What is Raycasting?
 
 Raycasting is a rendering technique that creates a 3D perspective in a 2D world by casting rays from the player's position and calculating wall distances. Unlike modern 3D engines that use polygon rendering, raycasting:
